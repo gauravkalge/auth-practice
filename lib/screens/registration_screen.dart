@@ -348,10 +348,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     userModel.cellNo = cellNoEditingController.text;
     userModel.telNo = telNoEdittingController.text;
     userModel.faxNo = faxNoEdittingController.text;
-    userModel.time = DateTime.now() as String?;
+    //userModel.time = DateTime.now() as String?;
 
     await firebaseFirestore
-        .collection("users")
+        .collection("contactPersons")
         .doc(user.uid)
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: "Account created successfully :) ");

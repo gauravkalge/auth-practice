@@ -14,7 +14,7 @@ class UserModel {
       this.cellNo,
       this.telNo,
       this.faxNo,
-      this.time,
+    //  this.time,
       });
 
   factory UserModel.fromMap(map) {
@@ -25,7 +25,7 @@ class UserModel {
       cellNo: map['cellNo'],
       telNo: map['telNo'],
       faxNo: map['faxNo'],
-      time: map['time'],
+     // time: map['time'],
     );
   }
 
@@ -37,7 +37,7 @@ class UserModel {
       'cellNo': cellNo,
       'telNo': telNo,
       'faxNo': faxNo,
-      'time' : time,
+     // 'time' : time,
     };
   }
 }
