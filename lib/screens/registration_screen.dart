@@ -348,7 +348,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     userModel.cellNo = cellNoEditingController.text;
     userModel.telNo = telNoEdittingController.text;
     userModel.faxNo = faxNoEdittingController.text;
-    //userModel.time = DateTime.now() as String?;
+    userModel.time = DateTime.now().toString();
 
     await firebaseFirestore
         .collection("contactPersons")

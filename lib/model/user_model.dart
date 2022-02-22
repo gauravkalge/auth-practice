@@ -7,15 +7,15 @@ class UserModel {
   String? faxNo;
   String? time;
 
-  UserModel(
-      {this.uid,
-      this.email,
-      this.firstName,
-      this.cellNo,
-      this.telNo,
-      this.faxNo,
-    //  this.time,
-      });
+  UserModel({
+    this.uid,
+    this.email,
+    this.firstName,
+    this.cellNo,
+    this.telNo,
+    this.faxNo,
+    this.time,
+  });
 
   factory UserModel.fromMap(map) {
     return UserModel(
@@ -25,7 +25,7 @@ class UserModel {
       cellNo: map['cellNo'],
       telNo: map['telNo'],
       faxNo: map['faxNo'],
-     // time: map['time'],
+      time: map['time'],
     );
   }
 
@@ -37,7 +37,7 @@ class UserModel {
       'cellNo': cellNo,
       'telNo': telNo,
       'faxNo': faxNo,
-     // 'time' : time,
+      'time': time,
     };
   }
 }
