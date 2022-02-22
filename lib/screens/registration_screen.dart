@@ -14,16 +14,15 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
-  
+
   // string for displaying the error Message
   String? errorMessage;
-
 
   // our form key
   final _formKey = GlobalKey<FormState>();
   // editing Controller
   final firstNameEditingController = new TextEditingController();
-  final secondNameEditingController = new TextEditingController();
+  final cellNoEditingController = new TextEditingController();
   final emailEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
@@ -52,7 +51,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.account_circle),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "First Name",
+          hintText: "Farmer Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -61,22 +60,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     //second name field
     final secondNameField = TextFormField(
         autofocus: false,
-        controller: secondNameEditingController,
-        keyboardType: TextInputType.name,
+        controller: cellNoEditingController,
+        keyboardType: TextInputType.number,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("Second Name cannot be Empty");
+            return ("Cell No can not be Empty");
           }
           return null;
         },
         onSaved: (value) {
-          secondNameEditingController.text = value!;
+          cellNoEditingController.text = value!;
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.contact_phone_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Second Name",
+          hintText: "Cell No",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -210,7 +209,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     SizedBox(
                         height: 180,
                         child: Image.asset(
-                          "assets/logo.png",
+                          "assets/images/logo.jpg",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),
@@ -235,6 +234,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       ),
     );
   }
+
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
@@ -272,6 +272,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       }
     }
   }
+
   postDetailsToFirestore() async {
     // calling our firestore
     // calling our user model
@@ -286,7 +287,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     userModel.email = user!.email;
     userModel.uid = user.uid;
     userModel.firstName = firstNameEditingController.text;
-    userModel.secondName = secondNameEditingController.text;
+    userModel.cellNo = cellNoEditingController.text;
 
     await firebaseFirestore
         .collection("users")

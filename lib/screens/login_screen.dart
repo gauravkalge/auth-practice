@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // firebase
   final _auth = FirebaseAuth.instance;
-  
+
   // string for displaying the error Message
   String? errorMessage;
 
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                         height: 200,
                         child: Image.asset(
-                          "assets/logo.png",
+                          "assets/images/logo.jpg",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),

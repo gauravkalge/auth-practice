@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -45,7 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               SizedBox(
                 height: 150,
-                child: Image.asset("assets/logo.png", fit: BoxFit.contain),
+                child:
+                    Image.asset("assets/images/logo.jpg", fit: BoxFit.contain),
               ),
               Text(
                 "Welcome Back",
@@ -54,12 +54,17 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
-              Text("${loggedInUser.firstName} ${loggedInUser.secondName}",
+              Text("${loggedInUser.firstName} ",
                   style: TextStyle(
                     color: Colors.black54,
                     fontWeight: FontWeight.w500,
                   )),
               Text("${loggedInUser.email}",
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w500,
+                  )),
+              Text("${loggedInUser.cellNo}",
                   style: TextStyle(
                     color: Colors.black54,
                     fontWeight: FontWeight.w500,
