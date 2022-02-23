@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Text("${loggedInUser.firstName} ",
+              Text("${loggedInUser.name} ",
                   style: const TextStyle(
                     color: Colors.black54,
                     fontWeight: FontWeight.w500,
@@ -97,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      drawer: Text('this is drawer'),
     );
   }
 

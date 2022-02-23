@@ -41,7 +41,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{3,}$');
           if (value!.isEmpty) {
-            return ("Name cannot be Empty");
+            return ("name cannot be Empty");
           }
           if (!regex.hasMatch(value)) {
             return ("Enter Valid name(Min. 3 Character)");
@@ -55,7 +55,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.account_circle),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Farmer Name",
+          hintText: "Farmer name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -344,7 +344,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     // writing all the values
     userModel.email = user!.email;
     userModel.uid = user.uid;
-    userModel.firstName = nameEditingController.text;
+    userModel.name = nameEditingController.text;
     userModel.cellNo = cellNoEditingController.text;
     userModel.telNo = telNoEdittingController.text;
     userModel.faxNo = faxNoEdittingController.text;
