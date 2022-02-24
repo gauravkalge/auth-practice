@@ -177,6 +177,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           if (!regex.hasMatch(value)) {
             return ("Enter Valid Password(Min. 6 Character)");
           }
+          return null;
         },
         onSaved: (value) {
           nameEditingController.text = value!;
